@@ -1,0 +1,22 @@
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script type="text/javascript">
+    ymaps.ready(init);
+    var myMap,
+        myPlacemark;
+
+    function init() {
+        myMap = new ymaps.Map("map", {
+            center: [{{ __SELF__.property('latitude') }}, {{ __SELF__.property('longitude') }}],
+            zoom: {{ __SELF__.property('zoom') }},
+            type: '{{ __SELF__.property('mapTypeId') }}'
+        });
+
+        myPlacemark = new ymaps.Placemark([{{ __SELF__.property('latitude') }}, {{ __SELF__.property('longitude') }}], {
+            hintContent: '{{ __SELF__.property('hintContent') }}',
+            balloonContent: '{{ __SELF__.property('balloonContent') }}'
+        });
+
+        myMap.geoObjects.add(myPlacemark);
+    }
+</script>
+<div id="map" style="width: {{ __SELF__.property('width') }}; height: {{ __SELF__.property('height') }}"></div>
