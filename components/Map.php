@@ -56,7 +56,7 @@ class Map extends ComponentBase
                 'type' => 'string',
             ],
             'balloonContent' => [
-                'title' => 'Высота',
+                'title' => 'Балун',
                 'default' => 'Столица России!',
                 'description' => 'Всплывающее окно на карте',
                 'type' => 'string',
